@@ -24,9 +24,21 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                
+                   if(editText1.getText().toString().isEmpty() ||
+                        editText2.getText().toString().isEmpty() ||
+                        editText3.getText().toString().isEmpty()){
+
+                    Toast.makeText(MainActivity.this, "Feilds cant be empty", Toast.LENGTH_SHORT).show();
+
+                }
+                
                 if(editText1.getText().toString().equals("Shan Athukoreala") &&
                         editText2.getText().toString().equals("Shan@gmail.com") &&
                         editText3.getText().toString().equals("Shan1@") ){
+                    
+                     Intent intent = new Intent(MainActivity.this, Dashboard.class);
+                    startActivity(intent);
 
                 }
             }
